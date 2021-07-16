@@ -4,6 +4,7 @@
 
 - This tool will replace those import statements and flatten (combine) them into one file. The output file can be used for Etherscan's verifyContract.
 - [Solidity file example](./example.sol)
+- Support: openzeppelin contracts & contracts-upgradeable.
 - Based on [solidity-flattener](https://github.com/poanetwork/solidity-flattener)
 
 ### Installation & Usage:

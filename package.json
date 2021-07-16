@@ -1,6 +1,6 @@
 {
   "name": "flatten-sol",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "flatten-sol command-line tool.",
   "license": "MIT",
   "repository": "https://github.com/ngduc/flatten-sol",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "echo --- TBD: build command",
-    "cp-files": "cp -R ./node_modules/openzeppelin-solidity/contracts/ ./",
+    "cp-files": "cp -R ./node_modules/openzeppelin-solidity/contracts/ ./ && cp -R ./node_modules/@openzeppelin/contracts-upgradeable/ ./",
     "test": "npx rimraf out && npm run cp-files && ava",
     "prepublishOnly": "npm run cp-files"
   },
@@ -30,6 +30,7 @@
     "boilerplate"
   ],
   "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.2.0",
     "bunyan": "^1.8.15",
     "decomment": "^0.9.4",
     "glob-promise": "^4.2.0",
