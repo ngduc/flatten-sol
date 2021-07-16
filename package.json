@@ -1,6 +1,6 @@
 {
   "name": "flatten-sol",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "flatten-sol command-line tool.",
   "license": "MIT",
   "repository": "https://github.com/ngduc/flatten-sol",
@@ -15,7 +15,7 @@
   "scripts": {
     "build": "cp -R ./node_modules/openzeppelin-solidity/contracts/ ./",
     "test": "npx rimraf testdir && ava",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "cli.js",
