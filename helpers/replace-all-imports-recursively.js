@@ -5,6 +5,10 @@ const replaceAllImportsInCurrentLayer = require('./replace-all-imports-in-curren
  * Recursively replaces all imports
  */
 async function replaceAllImportsRecursively(fileContent, dir) {
+  if (fileContent.indexOf('@openzeppelin/contracts/') > 0) {
+    fileContent = fileContent.replace(/\@openzeppelin\/contracts\//g, './contracts/');
+  }
+
   return new Promise(async (resolve) => {
     await replaceAllImportsRecursivelyInner(fileContent, dir, resolve);
   });
