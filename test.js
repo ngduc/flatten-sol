@@ -1,7 +1,7 @@
-import test from 'ava';
-import execa from 'execa';
+const test = require('ava');
+const execa = require('execa');
 
 test('main', async (t) => {
-  const { stdout } = await execa('./cli.js', ['testdir']);
-  t.is(stdout.indexOf('Version') >= 0, true);
+  const { stdout } = await execa('./index.js', ['example.sol']);
+  t.is(stdout.indexOf('Success') >= 0, true);
 });
