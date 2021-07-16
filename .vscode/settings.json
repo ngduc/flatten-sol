@@ -10,7 +10,7 @@
     "dist/": true,
     "static/": true
   },
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[json]": {
     "editor.formatOnSave": false
