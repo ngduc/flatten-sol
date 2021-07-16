@@ -1,6 +1,6 @@
 {
   "name": "flatten-sol",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "flatten-sol command-line tool.",
   "license": "MIT",
   "repository": "https://github.com/ngduc/flatten-sol",
@@ -18,8 +18,6 @@
     "prepublishOnly": "npm run build"
   },
   "files": [
-    "cli.js",
-    "utils.js",
     "index.js",
     "helpers",
     "contracts"
