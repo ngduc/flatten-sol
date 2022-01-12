@@ -15,13 +15,14 @@ function findAllImportPaths(dir, content) {
 		const importsCount = (content.match(regex) || []).length
 		let importsIterator = 0
 		let result
+
 		while ( (result = regex.exec(content)) ) {
 			const startImport = result.index
 			const endImport = startImport + content.substr(startImport).indexOf(constants.SEMICOLON) + 1
 			const fullImportStatement = content.substring(startImport, endImport)
 			const fullImportParts = fullImportStatement.split('"')
 			const fullImportPartsAlt = fullImportStatement.split('\'')
-			const dependencyPath = fullImportParts.length > 1 ? fullImportParts[1] : fullImportPartsAlt[1]
+			const dependencyPath = path.normalize(fullImportParts.length > 1 ? fullImportParts[1] : fullImportPartsAlt[1])
 			const fullImportPartsByAs = fullImportStatement.split(constants.AS)
 			let alias = fullImportPartsByAs.length > 1 ? fullImportPartsByAs[1].split(constants.SEMICOLON)[0] : null
 
@@ -39,10 +40,12 @@ function findAllImportPaths(dir, content) {
 				let fileContent
 				if (fileExists) {
 					fileContent = fs.readFileSync(dependencyPath, constants.UTF8)
+
 				} else {
 					dir = dir.substring(0, dir.lastIndexOf(constants.SLASH))
 					fileContent = await findFile.byName(dir, path.basename(dependencyPath))
 				}
+
 				if (fileContent.includes(constants.CONTRACT)) {
 					importObj.contractName = getContractName(fileContent)
 				}

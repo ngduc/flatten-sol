@@ -1,9 +1,12 @@
+const pathLib = require('path')
 const constants = require('./constants')
 
 function cleanPath(path) {
 	let cleanedPath
+
 	if (path.includes(constants.DIRTY_PATH)) {
 		cleanedPath = path.split(constants.DIRTY_PATH).join(constants.SLASH)
+
 	} else {
 		cleanedPath = path
 	}
@@ -16,8 +19,9 @@ function cleanPath(path) {
 
 	if (cleanedPath.includes(constants.DIRTY_PATH || constants.DIRTY_PATH_2)) {
 		return cleanPath(cleanedPath)
+
 	} else {
-		return cleanedPath
+		return pathLib.normalize(cleanedPath)
 	}
 }
 
