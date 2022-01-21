@@ -81,7 +81,7 @@ async function byNameAndReplaceInnerRecursivelyInner(importStatement, updatedFil
 		} else {
 			flattenFileContent = updatedFileContent.replace(importStatement, constants.EMPTY)
 			//issue #2.
-			const fileName = importedSrcFiles[path.basename(dir + dependencyPath)]
+			const fileName = importedSrcFiles[path.basename(path.join(dir, dependencyPath))]
 			if (flattenFileContent.includes(fileName) && flattenFileContent.includes(constants.IMPORT)) {
 				let importFileContent = fs.readFileSync(filePath, constants.UTF8)
 				flattenFileContent = importFileContent + flattenFileContent.replace(fileName, constants.EMPTY)
