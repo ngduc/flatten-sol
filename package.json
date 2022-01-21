@@ -30,7 +30,7 @@
     "boilerplate"
   ],
   "dependencies": {
-    "@openzeppelin/contracts-upgradeable": "^4.2.0",
+    "@openzeppelin/contracts-upgradeable": "^4.4.0",
     "bunyan": "^1.8.15",
     "decomment": "^0.9.4",
     "glob-promise": "^4.2.0",
