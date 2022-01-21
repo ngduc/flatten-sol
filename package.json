@@ -1,6 +1,6 @@
 {
   "name": "flatten-sol",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "flatten-sol command-line tool.",
   "license": "MIT",
   "repository": "https://github.com/ngduc/flatten-sol",
